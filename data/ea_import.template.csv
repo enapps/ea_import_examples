@@ -1,0 +1,7 @@
+"id","name","update","create_new","target_model_id"
+"res_partner_template","res.partner","TRUE","TRUE","res.partner"
+"res_partner_address_template","res.partner.address","TRUE","TRUE","res.partner.address"
+"sale_order_billing_template","sale.order billing address","TRUE","TRUE","res.partner.address"
+"sale_order_shipping_template","sale.order shipping address","TRUE","TRUE","res.partner.address"
+"sale_order_template","sale.order","TRUE","TRUE","sale.order"
+"sale_order_line_template","sale.order.line","TRUE","TRUE","sale.order.line"

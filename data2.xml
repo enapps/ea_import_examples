@@ -1,0 +1,132 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <!-- Some template lines must be added using XML because res.partner.name does not resolve properly using 'search' -->
+		<record id="ea_import_template_line_0" model="ea_import.template.line">
+			<field name="field_type">char</field>
+			<field name="many2one_rel_type">subfield</field>
+			<field eval="1" name="sequence"/>
+			<field eval="0" name="calculated"/>
+			<field eval="0" name="required"/>
+			<field eval="0" name="replace"/>
+			<field name="time_format">%d/%m/%Y</field>
+			<field eval="0" name="use_only_defaults"/>
+			<field name="target_field" ref="base.field_res_partner_name"/>
+			<field eval="1" name="key_field"/>
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'res.partner')]"/>
+		</record>
+        
+        <record id="ea_import_template_line_27" model="ea_import.template.line">
+            <field name="target_field" ref="base.field_res_partner_address_partner_id"/>
+			<field name="field_type">many2one</field>
+			<field name="many2one_rel_type">subfield</field>
+			<field eval="1" name="sequence"/>
+			<field eval="1" name="use_only_defaults"/>
+            <field name="default_value">Web Orders</field>
+            <field name="related_field" ref="base.field_res_partner_name"/>						
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order billing address')]"/>
+		</record>
+        
+        <record id="ea_import_template_line_28" model="ea_import.template.line">
+            <field name="target_field" ref="base.field_res_partner_address_partner_id"/>
+			<field name="field_type">many2one</field>
+			<field name="many2one_rel_type">subfield</field>
+			<field eval="1" name="sequence"/>
+			<field eval="1" name="use_only_defaults"/>
+            <field name="default_value">Web Orders</field>
+            <field name="related_field" ref="base.field_res_partner_name"/>						
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order shipping address')]"/>
+		</record>
+        
+        <record id="ea_import_template_line_29" model="ea_import.template.line">
+            <field name="target_field" ref="sale.field_sale_order_partner_id"/>
+			<field name="field_type">many2one</field>
+			<field name="many2one_rel_type">subfield</field>
+			<field eval="1" name="sequence"/>
+			<field eval="1" name="use_only_defaults"/>
+            <field name="default_value">Web Orders</field>
+            <field name="related_field" ref="base.field_res_partner_name"/>						
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order')]"/>
+		</record>
+        
+		<record id="ea_import_template_line_30" model="ea_import.template.line">
+			<field name="default_value">1</field>
+			<field name="field_type">many2one</field>
+			<field name="many2one_rel_type">dbid</field>
+			<field eval="5" name="sequence"/>
+			<field name="related_field_model">product.pricelist</field>
+			<field eval="1" name="use_only_defaults"/>
+			<field name="target_field" ref="sale.field_sale_order_pricelist_id"/>
+			<field eval="0" name="key_field"/>
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order')]"/>
+		</record>
+        
+        <record id="ea_import_template_line_31" model="ea_import.template.line">
+			<field name="field_type">many2one</field>
+			<field name="many2one_rel_type">template</field>
+			<field eval="2" name="sequence"/>
+			<field name="related_template_id" ref="sale_order_billing_template"/>
+			<field name="related_field_model">res.partner.address</field>
+			<field eval="0" name="use_only_defaults"/>
+			<field name="target_field" ref="sale.field_sale_order_partner_invoice_id"/>
+			<field eval="0" name="key_field"/>
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order')]"/>
+		</record>
+        
+        <record id="ea_import_template_line_33" model="ea_import.template.line">
+			<field name="field_type">many2one</field>
+			<field name="many2one_rel_type">subfield</field>
+			<field eval="19" name="sequence"/>
+			<field name="related_field" ref="product.field_product_product_default_code"/>
+			<field name="related_field_model">product.product</field>
+			<field eval="0" name="use_only_defaults"/>
+			<field name="target_field" ref="sale.field_sale_order_line_product_id"/>
+			<field eval="1" name="key_field"/>
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order.line')]"/>
+		</record>
+        
+        <record id="ea_import_template_line_35" model="ea_import.template.line">
+			<field name="field_type">float</field>
+			<field name="many2one_rel_type">subfield</field>
+			<field eval="22" name="sequence"/>
+			<field eval="0" name="calculated"/>
+			<field eval="0" name="required"/>
+			<field eval="0" name="replace"/>
+			<field name="time_format">%d/%m/%Y</field>
+			<field eval="0" name="use_only_defaults"/>
+			<field name="target_field" ref="sale.field_sale_order_line_price_unit"/>
+			<field eval="0" name="key_field"/>
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order.line')]"/>
+		</record>
+        
+        <record id="ea_import_template_line_36" model="ea_import.template.line">
+			<field name="field_type">many2one</field>
+			<field name="many2one_rel_type">template</field>
+			<field eval="1" name="sequence"/>
+			<field eval="0" name="calculated"/>
+			<field eval="0" name="required"/>
+			<field eval="0" name="replace"/>
+			<field name="time_format">%d/%m/%Y</field>
+			<field name="related_template_id" ref="sale_order_template"/>
+			<field name="related_field_model">sale.order</field>
+			<field eval="0" name="use_only_defaults"/>
+			<field name="target_field" ref="sale.field_sale_order_line_order_id"/>
+			<field eval="1" name="key_field"/>
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order.line')]"/>
+		</record>
+        
+        <record id="ea_import_template_line_37" model="ea_import.template.line">
+			<field name="field_type">char</field>
+			<field name="many2one_rel_type">subfield</field>
+			<field eval="20" name="sequence"/>
+			<field eval="0" name="calculated"/>
+			<field eval="0" name="required"/>
+			<field eval="0" name="replace"/>
+			<field name="time_format">%d/%m/%Y</field>
+			<field eval="0" name="use_only_defaults"/>
+			<field name="target_field" ref="sale.field_sale_order_line_name"/>
+			<field eval="0" name="key_field"/>
+			<field model="ea_import.template" name="template_id" search="[('name', '=', u'sale.order.line')]"/>
+		</record>
+	</data>
+</openerp>

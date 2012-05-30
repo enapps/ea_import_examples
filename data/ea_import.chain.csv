@@ -1,0 +1,3 @@
+"id","header","delimiter","separator","name","charset","input_file"
+"partner_import_chain","TRUE","""",",","partner import","utf-8",
+"sale_order_import_chain",TRUE,"""",",","sale order import","utf-8",
