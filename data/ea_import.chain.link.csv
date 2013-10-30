@@ -1,7 +1,0 @@
-"id","chain_id:id","template_id:id","sequence"
-"partner_import_link_1","partner_import_chain","res_partner_template",1
-"partner_import_link_2","partner_import_chain","res_partner_address_template",2
-"sale_order_import_link_1","sale_order_import_chain","sale_order_billing_template",1
-"sale_order_import_link_2","sale_order_import_chain","sale_order_shipping_template",2
-"sale_order_import_link_3","sale_order_import_chain","sale_order_template",3
-"sale_order_import_link_4","sale_order_import_chain","sale_order_line_template",4

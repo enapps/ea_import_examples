@@ -36,12 +36,11 @@
         'data/ea_import.template.csv',
         'data/ea_import.template.line.csv',
         'data/ea_import.chain.csv',
-        'data/ea_import.chain.link.csv',
         'data2.xml',
         ],
     'demo_xml': [
         ],
     'installable': True,
     'active': False,
-    'images': ['images/template_list.png','images/chain_form.png'],
+    'images': ['images/template_form.png','images/chain_form.png'],
 }
